@@ -14,8 +14,9 @@ import rma.swing.RmaImage;
 import com.rma.client.BrowserAction;
 import javax.swing.Icon;
 import javax.swing.Action;
-import  com.rma.client.Browser;
+import com.rma.client.Browser;
 import hec2.rts.client.RtsFrame;
+import javax.swing.JOptionPane;
 
 
 
@@ -87,10 +88,13 @@ public class SimpleRTSPluginMain extends AbstractPlugin implements SimpleRtsPlug
     public String getLogfile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    public boolean displayApplicationUnique(){
+        return displayApplication();        
+    }
     @Override
     public boolean displayApplication() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JOptionPane.showMessageDialog(Browser.getBrowserFrame(), "Sorry, this button does not do anything...yet\nYou should implement it!", "Sorry",JOptionPane.PLAIN_MESSAGE);
+        return true;
     }
 
     @Override
