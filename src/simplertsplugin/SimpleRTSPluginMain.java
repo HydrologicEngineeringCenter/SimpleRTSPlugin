@@ -5,7 +5,7 @@
  */
 package simplertsplugin;
 
-import com.rma.factories.NewObjectFactory;
+
 import com.rma.model.Project;
 import hec2.map.GraphicElement;
 import hec2.model.DataLocation;
@@ -14,8 +14,7 @@ import hec2.plugin.action.OutputElement;
 import hec2.plugin.lang.ModelLinkingException;
 import hec2.plugin.lang.OutputException;
 import hec2.plugin.model.ModelAlternative;
-import hec2.plugin.selfcontained.AbstractSelfContainedPlugin;
-import hec2.plugin.selfcontained.SelfContainedPluginAlt;
+import hec2.plugin.AbstractPlugin;
 import hec2.rts.plugin.RtsPlugin;
 import hec2.rts.plugin.RtsPluginManager;
 import hec2.rts.ui.RtsTabType;
@@ -25,6 +24,10 @@ import com.rma.client.BrowserAction;
 import javax.swing.Icon;
 import javax.swing.Action;
 import  com.rma.client.Browser;
+import com.rma.model.ComputeProgressListener;
+import hec.heclib.util.HecTime;
+import hec.watershed.model.Condition;
+import hec2.model.ProgramOrderItem;
 import hec2.rts.client.RtsFrame;
 
 
@@ -34,8 +37,8 @@ import hec2.rts.client.RtsFrame;
 // @author q0hecemt
 //
 
- 
-public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements RtsPlugin {
+//Extends AbstractPlugin. Simple plugin that does nopt 
+public class SimpleRTSPluginMain extends AbstractPlugin implements RtsPlugin {
     
     public static final String PLUGINNAME = "Simple RTS Plugin";
     public static final String PluginShortName = "Simple";
@@ -44,7 +47,6 @@ public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements 
     private static final String PLUGIN_EXTENSION = ".sp";	
     
     public static void main (String[] args) {
-        //code application logic here
         SimpleRTSPluginMain p = new SimpleRTSPluginMain();
        
     }
@@ -69,15 +71,16 @@ public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements 
        ((RtsFrame)Browser.getBrowserFrame()).getProgramToolbar().add(a);
         
     }   
-         
-    
-   
 
     @Override
     public boolean createProject(Project prjct) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public boolean openProject(Project prjct) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     @Override
     public boolean close(boolean bln) {
@@ -102,7 +105,6 @@ public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements 
     @Override
     public boolean displayApplication() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
     }
 
     @Override
@@ -116,27 +118,72 @@ public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements 
     }
 
     @Override
-    public void editAlternative(SelfContainedPluginAlt e) {
+    public boolean canImport() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    protected SelfContainedPluginAlt newAlternative(String string) {
+    public void importData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    protected String getAltFileExtension() {
+    public boolean displayApplication(ModelAlternative ma) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String getPluginDirectory() {
+    public boolean copyModelFiles(ModelAlternative ma, String string, boolean bln) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    protected NewObjectFactory getAltObjectFactory() {
+    public List<EditAction> getGlobalEditActions(RtsTabType rtt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean closeForecast(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ProgramOrderItem getProgramOrderItem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean compute(ModelAlternative ma) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<ModelAlternative> getModelAlternatives(Condition cndtn) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setComputeListeners(List<ComputeProgressListener> list) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean cancelCompute() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean needToCompute(ModelAlternative ma, HecTime ht) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<DataLocation> getDataLocations(ModelAlternative ma, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean setDataLocations(ModelAlternative ma, List<DataLocation> list) throws ModelLinkingException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -161,6 +208,11 @@ public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements 
     }
 
     @Override
+    public void editAlternative(ModelAlternative ma) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
     public List<EditAction> getEditActions(ModelAlternative ma) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -171,33 +223,13 @@ public class SimpleRTSPluginMain extends AbstractSelfContainedPlugin implements 
     }
 
     @Override
-    public boolean compute(ModelAlternative ma) {
+    public void addMap(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<DataLocation> getDataLocations(ModelAlternative ma, int i) {
+    public void removeMap(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public boolean setDataLocations(ModelAlternative ma, List<DataLocation> list) throws ModelLinkingException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean copyModelFiles(ModelAlternative ma, String string, boolean bln) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<EditAction> getGlobalEditActions(RtsTabType rtt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean closeForecast(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+           
 }
