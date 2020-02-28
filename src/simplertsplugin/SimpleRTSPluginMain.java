@@ -15,7 +15,7 @@ import hec2.plugin.lang.ModelLinkingException;
 import hec2.plugin.lang.OutputException;
 import hec2.plugin.model.ModelAlternative;
 import hec2.plugin.AbstractPlugin;
-import hec2.rts.plugin.RtsPlugin;
+import hec2.rts.plugin.SimpleRtsPlugin;
 import hec2.rts.plugin.RtsPluginManager;
 import hec2.rts.ui.RtsTabType;
 import java.util.List;
@@ -38,7 +38,7 @@ import hec2.rts.client.RtsFrame;
 //
 
 //Extends AbstractPlugin. Simple plugin that does nopt 
-public class SimpleRTSPluginMain extends AbstractPlugin implements RtsPlugin {
+public class SimpleRTSPluginMain extends AbstractPlugin implements SimpleRtsPlugin {
     
     public static final String PLUGINNAME = "Simple RTS Plugin";
     public static final String PluginShortName = "Simple";
@@ -114,121 +114,6 @@ public class SimpleRTSPluginMain extends AbstractPlugin implements RtsPlugin {
 
     @Override
     public String getDirectory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean canImport() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void importData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean displayApplication(ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean copyModelFiles(ModelAlternative ma, String string, boolean bln) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<EditAction> getGlobalEditActions(RtsTabType rtt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean closeForecast(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ProgramOrderItem getProgramOrderItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean compute(ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<ModelAlternative> getModelAlternatives(Condition cndtn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setComputeListeners(List<ComputeProgressListener> list) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean cancelCompute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean needToCompute(ModelAlternative ma, HecTime ht) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<DataLocation> getDataLocations(ModelAlternative ma, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setDataLocations(ModelAlternative ma, List<DataLocation> list) throws ModelLinkingException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<GraphicElement> getGraphicElements(ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<OutputElement> getOutputReports(ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean displayEditor(GraphicElement ge) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean displayOutput(OutputElement oe, List<ModelAlternative> list) throws OutputException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void editAlternative(ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<EditAction> getEditActions(ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void editAction(String string, ModelAlternative ma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void addMap(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void removeMap(String string) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
            
