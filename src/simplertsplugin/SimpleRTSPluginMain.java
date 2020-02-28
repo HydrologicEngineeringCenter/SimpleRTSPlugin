@@ -7,27 +7,14 @@ package simplertsplugin;
 
 
 import com.rma.model.Project;
-import hec2.map.GraphicElement;
-import hec2.model.DataLocation;
-import hec2.plugin.action.EditAction;
-import hec2.plugin.action.OutputElement;
-import hec2.plugin.lang.ModelLinkingException;
-import hec2.plugin.lang.OutputException;
-import hec2.plugin.model.ModelAlternative;
 import hec2.plugin.AbstractPlugin;
 import hec2.rts.plugin.SimpleRtsPlugin;
 import hec2.rts.plugin.RtsPluginManager;
-import hec2.rts.ui.RtsTabType;
-import java.util.List;
 import rma.swing.RmaImage;
 import com.rma.client.BrowserAction;
 import javax.swing.Icon;
 import javax.swing.Action;
 import  com.rma.client.Browser;
-import com.rma.model.ComputeProgressListener;
-import hec.heclib.util.HecTime;
-import hec.watershed.model.Condition;
-import hec2.model.ProgramOrderItem;
 import hec2.rts.client.RtsFrame;
 
 
@@ -37,7 +24,6 @@ import hec2.rts.client.RtsFrame;
 // @author q0hecemt
 //
 
-//Extends AbstractPlugin. Simple plugin that does nopt 
 public class SimpleRTSPluginMain extends AbstractPlugin implements SimpleRtsPlugin {
     
     public static final String PLUGINNAME = "Simple RTS Plugin";
