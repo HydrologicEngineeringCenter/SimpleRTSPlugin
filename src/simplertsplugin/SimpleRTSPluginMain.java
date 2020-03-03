@@ -30,8 +30,6 @@ public class SimpleRTSPluginMain extends AbstractPlugin implements SimpleRtsPlug
     public static final String PLUGINNAME = "Simple RTS Plugin";
     public static final String PluginShortName = "Simple";
     private static final String PLUGIN_VERSION = "0.1.0";
-    private static final String PLUGIN_DIRECTORY = "SimpleRTSPlugin";
-    private static final String PLUGIN_EXTENSION = ".sp";	
     
     public static void main (String[] args) {
         SimpleRTSPluginMain p = new SimpleRTSPluginMain();
