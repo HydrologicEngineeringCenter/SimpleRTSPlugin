@@ -47,7 +47,7 @@ public class SimpleRTSPluginMain extends AbstractPlugin implements SimpleRtsPlug
         Icon i = RmaImage.getImageIcon("Images/anchor.png");
         // constructor public BrowserAction(java.lang.String name, javax.swing.Icon icon, java.lang.Object methodContainer, java.lang.String methodName)
         // action of the button/menu item is defined by the fourth argument                  
-        BrowserAction a = new BrowserAction(PluginShortName, i , this , "displayApplicationUnique" );   
+        BrowserAction a = new BrowserAction(PluginShortName, i , this , "displayApplication" );   
 //        Setting SHORT_DESCRIPTION field to PluginShortName for the new BrowserAction?
         a.putValue(Action.SHORT_DESCRIPTION, getName());            
         //Insert the menu item in the Tools menu in the third position
@@ -86,9 +86,8 @@ public class SimpleRTSPluginMain extends AbstractPlugin implements SimpleRtsPlug
     public String getLogfile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public boolean displayApplicationUnique(){
-        return displayApplication();        
-    }
+    
+    
     @Override
     public boolean displayApplication() {
         JOptionPane.showMessageDialog(Browser.getBrowserFrame(), "Sorry, this button does not do anything...yet\nYou should implement it!", "Sorry",JOptionPane.PLAIN_MESSAGE);
